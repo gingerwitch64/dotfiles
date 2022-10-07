@@ -3,6 +3,7 @@
 # dotfile install script
 
 [ -d "~/.config/nvim" ] && cp init.vim ~/.config/nvim/init.vim || mkdir ~/.config/nvim && cp init.vim ~/.config/nvim/init.vim
+[ -d "~/.config/alacritty" ] && cp alacritty.yml ~/.config/alacritty/alacritty.yml || mkdir ~/.config/alacritty && cp alacritty.yml ~/.config/alacritty/alacritty.yml
 cp config.neomuttrc ~/.neomuttrc
 mkdir ~/.mutt
 echo 'Make sure to setup neomutt with your email account!'
