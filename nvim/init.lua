@@ -28,14 +28,22 @@ require("lazy").setup({
       'nvim-lualine/lualine.nvim',
       dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
+    {
+      "folke/tokyonight.nvim",
+      lazy = false,
+      priority = 1000,
+      opts = {},
+    },
   },
-  install = { colorscheme = { "habamax" } }, -- colorscheme for the plugin interface
+  install = { colorscheme = { "tokyonight" } }, -- colorscheme for the plugin interface
   checker = { enabled = false }, -- auto-check for updates?
 })
 
 require('lualine').setup({
-  options = { theme = 'powerline' },
+  options = { theme = 'tokyonight' },
 })
+
+vim.cmd[[colorscheme tokyonight-night]]
 
 -- vim-derived settings
 
