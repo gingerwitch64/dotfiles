@@ -25,6 +25,10 @@ vim.g.maplocalleader = "\\"
 require("lazy").setup({
   spec = { -- plugins here
     {
+      "neovim/nvim-lspconfig",
+      lazy = false,
+    },
+    {
       'nvim-lualine/lualine.nvim',
       dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
@@ -44,6 +48,10 @@ require('lualine').setup({
 })
 
 vim.cmd[[colorscheme tokyonight-night]]
+
+require'lspconfig'.clangd.setup{}
+require'lspconfig'.ruff.setup{}
+require'lspconfig'.rust_analyzer.setup{}
 
 -- vim-derived settings
 
