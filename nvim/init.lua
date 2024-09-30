@@ -38,6 +38,10 @@ require("lazy").setup({
       priority = 1000,
       opts = {},
     },
+    {
+      "nvim-treesitter/nvim-treesitter",
+      lazy = false,
+    },
   },
   install = { colorscheme = { "tokyonight" } }, -- colorscheme for the plugin interface
   checker = { enabled = false }, -- auto-check for updates?
@@ -52,6 +56,17 @@ vim.cmd[[colorscheme tokyonight-night]]
 require'lspconfig'.clangd.setup{}
 require'lspconfig'.ruff.setup{}
 require'lspconfig'.rust_analyzer.setup{}
+
+require("nvim-treesitter.configs").setup {
+  ensure_installed = {
+    "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline",
+    "rust", "python",
+  },
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+  },
+}
 
 -- vim-derived settings
 
