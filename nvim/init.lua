@@ -46,6 +46,7 @@ require("lazy").setup({
       "L3MON4D3/LuaSnip",
       version = "v2.*",
       build = "make install_jsregexp",
+      dependencies = { "rafamadriz/friendly-snippets" },
     },
     {
       "hrsh7th/nvim-cmp",
@@ -60,6 +61,9 @@ require("lazy").setup({
     {
       "saadparwaiz1/cmp_luasnip",
     },
+    {
+      "m4xshen/autoclose.nvim",
+    },
   },
   install = { colorscheme = { "tokyonight" } }, -- colorscheme for the plugin interface
   checker = { enabled = false }, -- auto-check for updates?
@@ -71,6 +75,7 @@ require("lualine").setup({
 
 vim.cmd[[colorscheme tokyonight-night]]
 
+local autoclose = require("autoclose")
 local lspconfig = require("lspconfig")
 local luasnip = require("luasnip")
 local cmp = require("cmp")
@@ -142,6 +147,10 @@ cmp.setup.cmdline(':', {
   }),
   matching = { disallow_symbol_nonprefix_matching = false }
 })
+
+autoclose.setup()
+
+require("luasnip.loaders.from_vscode").lazy_load()
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
