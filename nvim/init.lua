@@ -45,6 +45,9 @@ require("lazy").setup({
     {
       "m4xshen/autoclose.nvim",
     },
+    {
+      "echasnovski/mini.completion",
+    },
   },
   install = { colorscheme = { "tokyonight" } }, -- colorscheme for the plugin interface
   checker = { enabled = false }, -- auto-check for updates?
@@ -57,6 +60,7 @@ require("lualine").setup({
 vim.cmd[[colorscheme tokyonight-night]]
 
 require("autoclose").setup()
+require('mini.completion').setup()
 
 local lspconfig = require("lspconfig")
 lspconfig.clangd.setup{}
