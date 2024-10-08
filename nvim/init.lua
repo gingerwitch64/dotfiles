@@ -53,19 +53,17 @@ require("lazy").setup({
   checker = { enabled = false }, -- auto-check for updates?
 })
 
-require("lualine").setup({
-  options = { theme = "tokyonight" },
-})
-
 vim.cmd[[colorscheme tokyonight-night]]
 
+require("lualine").setup({ options = { theme = "tokyonight" }, })
 require("autoclose").setup()
-require('mini.completion').setup()
+require("mini.completion").setup()
 
 local lspconfig = require("lspconfig")
-lspconfig.clangd.setup{}
-lspconfig.ruff.setup{}
-lspconfig.rust_analyzer.setup{}
+local lang_servers = { "clangd", "ruff", "rust_analyzer", }
+for _, lsp in ipairs(lang_servers) do
+  lspconfig[lsp].setup{}
+end
 
 require("nvim-treesitter.configs").setup {
   ensure_installed = {
