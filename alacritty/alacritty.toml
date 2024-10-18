@@ -1,0 +1,48 @@
+[terminal]
+shell.program = "/bin/bash"
+
+[font]
+normal.family = "JetBrains Mono NL"
+normal.style  = "Regular"
+size = 12.00
+
+[colors.cursor]
+text   = "#1a1a1a"
+cursor = "#9fd5f5"
+
+[colors.primary]
+foreground = "#dedeef"
+background = "#1a1a1a"
+
+[colors.normal]
+black   = "#1a1a1a"
+red     = "#ff3a3a"
+green   = "#3aef3a"
+yellow  = "#e6e61a"
+blue    = "#1a7eff"
+magenta = "#df3adf"
+cyan    = "#3ff0e0"
+white   = "#dadada"
+
+[colors.bright]
+black   = "#5a5a5a"
+red     = "#ffaaaa"
+green   = "#aaf3aa"
+yellow  = "#f3f35a"
+blue    = "#6abaff"
+magenta = "#e5aae5"
+cyan    = "#aafff0"
+white   = "#f3f3f3"
+
+[colors.dim]
+black   = "#000000"
+red     = "#b71a1a"
+green   = "#1ab71a"
+yellow  = "#b5b50a"
+blue    = "#0A4FAA"
+magenta = "#a71aa7"
+cyan    = "#1AA59F"
+white   = "#a5a5a5"
+
+[mouse]
+hide_when_typing = true
