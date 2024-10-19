@@ -1,5 +1,5 @@
 [terminal]
-shell.program = "/bin/bash"
+shell.program = "/bin/fish"
 
 [font]
 normal.family = "JetBrains Mono NL"
