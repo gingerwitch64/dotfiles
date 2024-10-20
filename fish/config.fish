@@ -3,12 +3,12 @@ function fish_prompt
   # Use delta for prompt if clear, epsilon if error
   set -l stat
   if test $last_status -eq 0
-    set stat (set_color brgreen)\u03B4(set_color normal)
+    set stat (set_color brwhite)\u03B4(set_color normal)
   else
     set stat (set_color red)\u03B5(set_color normal)
   end
 
-  echo (set_color brred)(whoami) (set_color brblue)(prompt_pwd)(set_color normal)
+  echo (set_color brgreen)(whoami) (set_color brblue)(prompt_pwd)(set_color normal)
   echo \u2514 $stat ''
 end
 
