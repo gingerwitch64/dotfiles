@@ -17,9 +17,22 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Make sure to setup `mapleader` and `maplocalleader` before
 -- loading lazy.nvim so that mappings are correct.
--- This is also a good place to setup other settings (vim.opt)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
+
+-- vim-derived settings
+vim.opt.number      = true -- numbered lines
+vim.opt.linebreak   = true -- break lines at words
+vim.opt.showmatch   = true -- highlight matching brackets
+
+vim.opt.ignorecase  = true -- search is not case sensitive, except:
+vim.opt.smartcase   = true -- when uppercase letters are present
+vim.opt.incsearch   = true -- dynamically show search results 
+
+vim.opt.expandtab   = true -- use spaces, NOT tabs
+vim.opt.smartindent = true -- contextual indenting
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth  = 2
 
 -- Setup lazy.nvim
 require("lazy").setup({
@@ -49,7 +62,7 @@ require("lazy").setup({
       "echasnovski/mini.completion",
     },
   },
-  install = { colorscheme = { "tokyonight" } }, -- colorscheme for the plugin interface
+  install = { colorscheme = { "tokyonight-night" } }, -- colorscheme for the plugin interface
   checker = { enabled = false }, -- auto-check for updates?
 })
 
@@ -76,17 +89,3 @@ require("nvim-treesitter.configs").setup {
   },
 }
 
--- vim-derived settings
-
-vim.opt.number      = true -- numbered lines
-vim.opt.linebreak   = true -- break lines at words
-vim.opt.showmatch   = true -- highlight matching brackets
-
-vim.opt.ignorecase  = true -- search is not case sensitive, except:
-vim.opt.smartcase   = true -- when uppercase letters are present
-vim.opt.incsearch   = true -- dynamically show search results 
-
-vim.opt.expandtab   = true -- use spaces, NOT tabs
-vim.opt.smartindent = true -- contextual indenting
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth  = 2
