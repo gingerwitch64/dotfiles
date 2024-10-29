@@ -1,3 +1,5 @@
+set -U fish_greeting
+
 function fish_prompt
   set -l last_status $status
   # Use delta for prompt if clear, epsilon if error
